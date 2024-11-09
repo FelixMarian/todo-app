@@ -1,0 +1,20 @@
+.card {
+    width: 18rem;
+    border-color: #191919;
+
+}
+
+.card .card-body {
+    padding: 1rem;
+    background-color: #191919;
+    color: white;
+}
+
+.card .card-title {
+    text-align: center;
+}
+
+.card .card-text {
+    background-color: #161616;
+    padding: 2rem;
+}

@@ -1,0 +1,18 @@
+.DndContainer{
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70rem;
+    border: 1px solid white;
+    padding: 1.7rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #757575;
+    padding: 8px;
+    text-align: left;
+}
