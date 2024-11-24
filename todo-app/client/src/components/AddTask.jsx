@@ -14,10 +14,10 @@ function AddTask({ closeTaskModal }) {
 
     //Function to format date
     const formatDate = (date) => {
-        const day = String(date.getDate()).padStart(2, '0'); // Folosește getDate() în loc de getDay()
-        const month = String(date.getMonth() + 1).padStart(2, '0'); // Adaugă 1 pentru lună
+        const day = String(date.getDate()).padStart(2, '0');
+        const month = String(date.getMonth() + 1).padStart(2, '0');
         const year = date.getFullYear();
-        return `${day}/${month}/${year}`; // Folosește ghilimele inverse pentru interpolare
+        return `${day}/${month}/${year}`;
     };
 
     // Method to add a new task into db

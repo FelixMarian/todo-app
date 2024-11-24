@@ -2,14 +2,14 @@
     justify-content: space-around;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 5%;
+    font-size: 1.5rem;
+    width: 100vw;
+    min-height: 3vh;
     background-color: #191919;
 }
 
 nav{
     justify-content: space-around;
-    padding: 30px;
 }
 
 .nav-link{
@@ -18,4 +18,18 @@ nav{
 
 .nav-link:hover{
     color: gray;
+}
+
+@media (max-width: 1140px){
+    .HeaderNav
+}
+
+@media (max-width: 670px){
+    .HeaderNav
+}
+
+@media (max-width: 540px){
+    .DndContainer{
+        min-width: 25rem;
+    }
 }

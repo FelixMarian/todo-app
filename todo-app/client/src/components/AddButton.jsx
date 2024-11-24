@@ -14,7 +14,7 @@ function AddButton() {
     return (
         <>
             <button type="button"
-                    className="btn btn-secondary btn-lg"
+                    className="btn btn-secondary   btn-lg"
                     onClick={openTaskModal}
                     >Add task</button>
             {newTask === 1 && (

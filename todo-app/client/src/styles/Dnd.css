@@ -2,7 +2,7 @@
     margin-top: 1rem;
     margin-left: auto;
     margin-right: auto;
-    width: 70rem;
+    min-width: 70rem;
     border: 1px solid white;
     padding: 1.7rem;
 }
@@ -15,4 +15,23 @@ th, td {
     border: 1px solid #757575;
     padding: 8px;
     text-align: left;
+}
+
+@media (max-width: 1140px){
+    .DndContainer{
+
+        min-width: 40rem;
+    }
+}
+
+@media (max-width: 670px){
+    .DndContainer{
+        min-width: 35rem;
+    }
+}
+
+@media (max-width: 540px){
+    .DndContainer{
+        min-width: 25rem;
+    }
 }

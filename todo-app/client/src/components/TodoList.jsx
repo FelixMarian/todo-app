@@ -6,39 +6,29 @@ import '../styles/Dnd.css';
 import AddButton from "./AddButton.jsx";
 import axios from "axios";
 
-const fetchTasks = async () => {
-    try {
-        const response = await axios.get('http://localhost:5000/apiG/getTasks');
-        console.log('Tasks:', response.data);
-        return response.data;
-    } catch (error) {
-        console.error('Eroare la obținerea task-urilor:', error);
-        return [];
-    }
-};
-
 function TodoList() {
     const [sections, setSections] = useState([]);
 
-    //Reload tasks from db every 2 seconds
+
+
+
+
+    // Lista custom fallback
+    const fallbackSections = [
+        { id: 1, title: 'Default Section 1', description: "Description 1", dateC:"24.11.2024", deadline: "31.12.2024" },
+        { id: 2, title: 'Default Section 2', description: "Description 2", dateC:"03.12.2022", deadline: "13.11.2023"},
+    ];
+
+
     useEffect(() => {
-        const loadTasks = async () => {
-            const tasks = await fetchTasks();
-            setSections(tasks);
-        };
-        loadTasks();
-
-
-        const intervalId = setInterval(loadTasks, 2000);
-
-        return () => clearInterval(intervalId);
+        setSections(fallbackSections);
     }, []);
 
     return (
         <>
             <div className="DndContainer">
                 <DndProvider backend={HTML5Backend}>
-                    <SectionList sections={sections} />
+                    <SectionList sections={sections}/>
                 </DndProvider>
             </div>
         </>
