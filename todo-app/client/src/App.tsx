@@ -8,6 +8,8 @@ import List from './pages/List.jsx';
 import Login from './pages/Login.jsx';
 // @ts-ignore
 import Register from './pages/Register.jsx';
+// @ts-ignore
+import MyAccount from './pages/MyAccount.jsx';
 import "./App.css";
 
 
@@ -22,6 +24,7 @@ function App(){
                     <Route path="/list" element={<List />} />
                     <Route path="/Login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
+                    <Route path="/account" element={<MyAccount/>} />
                 </Routes>
             </Router>
         </>

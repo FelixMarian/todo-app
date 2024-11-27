@@ -1,5 +1,5 @@
 import '../styles/HeaderNav.css';
-
+import DromdownBtn from './Dropdown.jsx';
 
 function HeaderNav() {
     return (
@@ -11,9 +11,7 @@ function HeaderNav() {
                 <li className="nav-item">
                     <a className="nav-link" href="/list">Todo</a>
                 </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="/account">My profile</a>
-                </li>
+                <DromdownBtn/>
             </ul>
         </div>
     )

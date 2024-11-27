@@ -1,0 +1,48 @@
+.ProfileContainer{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    margin-top: 20vh;
+    justify-content: center;
+    align-items: start;
+    position: absolute;
+}
+
+.Pfp{
+    height: 10rem;
+}
+
+.ProfileWrap{
+    min-width: 30rem;
+    min-height: 30rem;
+    padding-top: 2rem;
+    background: #191919;
+    color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Info {
+    min-width: 10rem;
+    height: 10rem;
+    gap: 1rem;
+    margin-top: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    display: flex;
+}
+
+.Buttons{
+    display: flex;
+    gap: 3rem;
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 490px){
+    .ProfileWrap{
+        min-width: 20rem;
+    }
+}
