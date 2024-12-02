@@ -12,6 +12,7 @@
     "mongoose": "^8.8.1",
     "react-beautiful-dnd": "^13.1.1",
     "react-bootstrap": "^2.10.6",
+    "react-burger-menu": "^3.1.0",
     "react-dnd": "^16.0.1",
     "react-dnd-html5-backend": "^16.0.1"
   },

@@ -8,8 +8,6 @@ function DropdownBtn() {
        <div className="dropdown">
            <Navbar variant="dark" bg="transparent" expand="lg" style={{height:"3.3rem"}}>
                <Container fluid>
-                   <Navbar.Toggle aria-controls="navbar-dark-example" />
-                   <Navbar.Collapse id="navbar-dark-example">
                        <Nav>
                            <NavDropdown
                                id="nav-dropdown-dark-example"
@@ -21,7 +19,6 @@ function DropdownBtn() {
                                <NavDropdown.Item href="login">Sign in</NavDropdown.Item>
                            </NavDropdown>
                        </Nav>
-                   </Navbar.Collapse>
                </Container>
            </Navbar>
        </div>
