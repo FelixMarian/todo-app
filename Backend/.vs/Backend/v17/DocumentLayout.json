@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\stoen\\Desktop\\todo-app\\Backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C6DBDDA1-A280-43A2-A50D-0898D96A35A4}|Backend\\Backend.csproj|c:\\users\\stoen\\desktop\\todo-app\\backend\\backend\\data\\accountdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6DBDDA1-A280-43A2-A50D-0898D96A35A4}|Backend\\Backend.csproj|solutionrelative:backend\\data\\accountdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C6DBDDA1-A280-43A2-A50D-0898D96A35A4}|Backend\\Backend.csproj|c:\\users\\stoen\\desktop\\todo-app\\backend\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6DBDDA1-A280-43A2-A50D-0898D96A35A4}|Backend\\Backend.csproj|solutionrelative:backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C6DBDDA1-A280-43A2-A50D-0898D96A35A4}|Backend\\Backend.csproj|c:\\users\\stoen\\desktop\\todo-app\\backend\\backend\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6DBDDA1-A280-43A2-A50D-0898D96A35A4}|Backend\\Backend.csproj|solutionrelative:backend\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C6DBDDA1-A280-43A2-A50D-0898D96A35A4}|Backend\\Backend.csproj|c:\\users\\stoen\\desktop\\todo-app\\backend\\backend\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6DBDDA1-A280-43A2-A50D-0898D96A35A4}|Backend\\Backend.csproj|solutionrelative:backend\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\stoen\\Desktop\\todo-app\\Backend\\Backend\\Migrations\\20250124000247_AccountsMigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Backend\\Migrations\\20250124000247_AccountsMigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "20250124000247_AccountsMigration.cs",
+              "DocumentMoniker": "C:\\Users\\stoen\\Desktop\\todo-app\\Backend\\Backend\\Migrations\\20250124000247_AccountsMigration.cs",
+              "RelativeDocumentMoniker": "Backend\\Migrations\\20250124000247_AccountsMigration.cs",
+              "ToolTip": "C:\\Users\\stoen\\Desktop\\todo-app\\Backend\\Backend\\Migrations\\20250124000247_AccountsMigration.cs",
+              "RelativeToolTip": "Backend\\Migrations\\20250124000247_AccountsMigration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-24T00:02:47.311Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AccountDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\stoen\\Desktop\\todo-app\\Backend\\Backend\\Data\\AccountDbContext.cs",
+              "RelativeDocumentMoniker": "Backend\\Data\\AccountDbContext.cs",
+              "ToolTip": "C:\\Users\\stoen\\Desktop\\todo-app\\Backend\\Backend\\Data\\AccountDbContext.cs",
+              "RelativeToolTip": "Backend\\Data\\AccountDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-23T22:38:58.911Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\stoen\\Desktop\\todo-app\\Backend\\Backend\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Backend\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\stoen\\Desktop\\todo-app\\Backend\\Backend\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Backend\\Controllers\\AccountController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA4AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-23T22:17:07.907Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Account.cs",
+              "DocumentMoniker": "C:\\Users\\stoen\\Desktop\\todo-app\\Backend\\Backend\\Models\\Account.cs",
+              "RelativeDocumentMoniker": "Backend\\Models\\Account.cs",
+              "ToolTip": "C:\\Users\\stoen\\Desktop\\todo-app\\Backend\\Backend\\Models\\Account.cs",
+              "RelativeToolTip": "Backend\\Models\\Account.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-23T22:13:27.925Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\stoen\\Desktop\\todo-app\\Backend\\Backend\\Program.cs",
+              "RelativeDocumentMoniker": "Backend\\Program.cs",
+              "ToolTip": "C:\\Users\\stoen\\Desktop\\todo-app\\Backend\\Backend\\Program.cs",
+              "RelativeToolTip": "Backend\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-23T22:05:51.354Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
