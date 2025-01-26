@@ -1,19 +1,29 @@
 import '../styles/Register.css'
 import {useState} from 'react';
+import axios from 'axios';
+import {useNavigate} from 'react-router-dom';
+
 function RegisterForm(){
-    const [user, setUser] = useState("");
+    const [user, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+    const navigate = useNavigate();
+
     const handleSubmit = async (e) => {
-        const response = await fetch("http://localhost:5000/register", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ user: user, email: email, password: pass }),
-        });
-        const data = await response.json();
-        if (data.token) {
-            localStorage.setItem("token", data.token);
+        try {
+            const response = await axios.post("https://localhost:7202/api/Account/register", {
+                username: user,
+                email: email,
+                password: password
+            }, {headers: {
+                    "Content-Type": "application/json",
+                }})
+            console.log(response);
+            if(response.status === 200)
+                navigate('/login');
+        } catch (e) {
+            console.log(e);
         }
     }
     return (
@@ -24,12 +34,12 @@ function RegisterForm(){
                 <div className="register-wrap">
                     <h2>Register</h2>
 
-                    <form className="form" onSubmit={handleSubmit}>
+                    <div className="form" onSubmit={handleSubmit}>
                         <input type="text" placeholder="Username" name="username" onChange={(e) => setUsername(e.target.value)}/>
                         <input type="email" placeholder="E-mail" name="mail" onChange={(e) => setEmail(e.target.value)}/>
                         <input type="password" placeholder="Password" name="password" onChange={(e) => setPassword(e.target.value)}/>
-                        <button > Sign in</button>
-                    </form>
+                        <button onClick={handleSubmit}> Sign in</button>
+                    </div>
                 </div>
             </div>
         </>

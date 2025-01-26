@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "jcGVuzEEus2hLPzQ9iBmz2+msi5XvoWv1yFuqB4MmHErpLFqibtwVUXX0CS57odU6SSloLFL+VDyeMOiaOPHjg==",
+  "dgSpecHash": "rU2gGtb5SxWKVz5IrL0O2PuP4qbpYNOz72LLtVR/LTJ5wfJP0S1Q4T2d+nMYvLOG+SkR63/N70dJyhzp6qimtw==",
   "success": true,
   "projectFilePath": "C:\\Users\\stoen\\Desktop\\todo-app\\Backend\\Backend\\Backend.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\stoen\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\stoen\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\stoen\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\stoen\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.3\\microsoft.codeanalysis.analyzers.3.3.3.nupkg.sha512",

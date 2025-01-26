@@ -1,4 +1,5 @@
-﻿using System.Data.SqlTypes;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
+using System.Data.SqlTypes;
 
 namespace Backend.Models
 {
@@ -9,15 +10,15 @@ namespace Backend.Models
         public string username { get; set; }
         public string password { get; set; }
         public string email { get; set; }
-        public DateTime createdAt { get; set; }
+        public string createdAt { get; set; }
 
-        public Account( string username, string password, string email)
+        public Account( string username, string email, string password)
         {
             guid = Guid.NewGuid().ToString();
-            username = username;
-            password = password;
-            email = email;
-            createdAt = DateTime.Now;
+            this.username = username;
+            this.password = password;
+            this.email = email;
+            createdAt = DateTime.Now.ToString();
         }
     }
 }

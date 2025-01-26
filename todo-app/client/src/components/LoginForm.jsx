@@ -1,28 +1,38 @@
 import "../styles/Login.css";
 import { useState } from "react";
+import axios from 'axios';
+import {useNavigate} from 'react-router-dom';
+import {useCookies} from "react-cookie";
 
 function LoginForm() {
-    const [user, setUser] = useState("");
+    const [email, setEmail] = useState("");
     const [pass, setPass] = useState("");
 
+    const [cookie, setCookie, removeCookie] = useCookies(["email"]);
+
+    const navigate = useNavigate();
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch("http://localhost:5000/login", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
+        try {
+            const response = await axios.post("https://localhost:7202/api/Account/login", {
+                email: email,
+                password: pass,
+                withCredentials: true
             },
-            body: JSON.stringify({ email: user, password: pass }),
-        });
+                {headers: {
+                    "Content-Type": "application/json",
+                    }});
 
-        const data = await response.json();
-        if (data.token) {
-            // Save token locally
-            localStorage.setItem("token", data.token);
-            alert("Login successful");
-        } else {
-            alert("Login failed");
+            if(response.status === 200) {
+                setCookie("email", email, {maxAge: 1800});
+                navigate('/');
+            }
         }
+        catch (e) {
+            console.log(e);
+        }
+
+
     };
 
     return (
@@ -32,9 +42,9 @@ function LoginForm() {
                 <form className="form" onSubmit={handleSubmit}>
                     <input
                         type="text"
-                        placeholder="Username"
-                        name="username"
-                        onChange={(e) => setUser(e.target.value)}
+                        placeholder="Email"
+                        name="email"
+                        onChange={(e) => setEmail(e.target.value)}
                     />
                     <input
                         type="password"
