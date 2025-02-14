@@ -3,7 +3,11 @@ using Backend.DTO;
 using Backend.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
 using System.Net;
+using System.Security.Claims;
+using System.Text;
 
 namespace Backend.Controllers
 {
@@ -11,6 +15,7 @@ namespace Backend.Controllers
     [Route("api/[controller]")]
     public class AccountController : Controller
     {
+        private readonly string _secretKey = "ewrewrewrewfsdvcsdferwewrewrewfsdfewrsrewrewsf3223423rgrsfdtferwrwerewsfdferwsrew423423wefew";
 
         [HttpGet("index")]
         public IActionResult Index()
@@ -46,11 +51,23 @@ namespace Backend.Controllers
             if ((!string.IsNullOrWhiteSpace(acc.email) && !string.IsNullOrWhiteSpace(acc.password))
                 && BCrypt.Net.BCrypt.Verify(acc.password, foundAcc.Result.password))
             {
-                HttpContext.Session.SetString("guid", foundAcc.Result.guid);
-                return StatusCode(200); ;
+                var tokenHandler = new JwtSecurityTokenHandler();
+                var key = Encoding.ASCII.GetBytes(_secretKey);
+                var tokenDescriptor = new SecurityTokenDescriptor
+                {
+                    Subject = new ClaimsIdentity(new Claim[]
+                {
+                    new Claim("guid", foundAcc.Id.ToString())
+                }),
+                    Expires = DateTime.UtcNow.AddHours(1),
+                    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+                };
+                var token = tokenHandler.CreateToken(tokenDescriptor);
+
+                return Ok(new { Token = tokenHandler.WriteToken(token) });
             }
             else
-                return StatusCode(500);
+                return Unauthorized();
         }
     }
 }

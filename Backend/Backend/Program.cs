@@ -1,6 +1,9 @@
 using Backend.Controllers;
 using Backend.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +13,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AccountDbContext>(options =>
     options.UseNpgsql("Host=localhost;Port=5432;Database=AccountDb; Username=postgres;Password=postgres"));
+builder.Services.AddDbContext<TasksDbContext>(options =>
+    options.UseNpgsql("Host=localhost;Port=5432;Database=TasksDB; Username=postgres;Password=postgres"));
 
 // Session
 builder.Services.AddSession(options =>
@@ -18,6 +23,9 @@ builder.Services.AddSession(options =>
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
 });
+
+//JWT
+var key = Encoding.ASCII.GetBytes("privatekey");
 
 //Cors
 builder.Services.AddCors(options =>
@@ -30,6 +38,26 @@ builder.Services.AddCors(options =>
     });
 });
 
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.RequireHttpsMetadata = false;
+    options.SaveToken = true;
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(key),
+        ValidateIssuer = false,
+        ValidateAudience = false
+    };
+});
+builder.Services.AddAuthorization();
+builder.Services.AddControllers();
 
 var app = builder.Build();
 // Configure the HTTP request pipeline.
@@ -51,9 +79,12 @@ app.UseCors("AllowAll");
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+
 app.UseSession();
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

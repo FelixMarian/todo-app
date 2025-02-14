@@ -6,10 +6,7 @@ function AddTask({ closeTaskModal }) {
     const [task, setTask] = useState({
         title: '',
         description: '',
-        createdB: 'Felix',
-        dateC: '',
-        dl: '',
-        status: 'Unfinished'
+        dl: ''
     });
 
     //Function to format date
@@ -23,24 +20,17 @@ function AddTask({ closeTaskModal }) {
     // Method to add a new task into db
     const addTaskToDb = async () => {
         try {
-            const raspuns = await axios.post('http://localhost:5000/api/addToDB', {
+            const response = await axios.post('https://localhost:7202/api/Tasks/add', {
                 title: task.title,
                 description: task.description,
-                createdB: task.createdB,
-                dateC: formatDate(new Date()), // Data curentă
-                deadline: formatDate(new Date(task.dl)), // Convertește la Date
-                status: task.status
+                deadline: task.dl
             });
-            console.log('Task adăugat:', raspuns.data);
-
+            console.log('Task adăugat:', response.data);
             // Reset settings
             setTask({
                 title: '',
                 description: '',
-                createdB: 'Felix',
-                dateC: '',
                 dl: '',
-                status: 'Unfinished'
             });
             closeTaskModal();
         } catch (error) {

@@ -3,6 +3,7 @@ import { useState } from "react";
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
 import {useCookies} from "react-cookie";
+import {jwtDecode} from "jwt-decode";
 
 function LoginForm() {
     const [email, setEmail] = useState("");
@@ -22,9 +23,10 @@ function LoginForm() {
                 {headers: {
                     "Content-Type": "application/json",
                     }});
-
-            if(response.status === 200) {
-                setCookie("email", email, {maxAge: 1800});
+            if(response.data.token) {
+                localStorage.setItem("token", response.data.token);
+                var decoded = jwtDecode(response.data.token);
+                console.log(decoded["guid"]);
                 navigate('/');
             }
         }
