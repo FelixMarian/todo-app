@@ -57,13 +57,12 @@ namespace Backend.Controllers
                 {
                     Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim("guid", foundAcc.Id.ToString())
+                    new Claim("guid", foundAcc.Result.guid)
                 }),
                     Expires = DateTime.UtcNow.AddHours(1),
                     SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
                 };
                 var token = tokenHandler.CreateToken(tokenDescriptor);
-
                 return Ok(new { Token = tokenHandler.WriteToken(token) });
             }
             else

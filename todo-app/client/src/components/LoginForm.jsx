@@ -25,8 +25,6 @@ function LoginForm() {
                     }});
             if(response.data.token) {
                 localStorage.setItem("token", response.data.token);
-                var decoded = jwtDecode(response.data.token);
-                console.log(decoded["guid"]);
                 navigate('/');
             }
         }
