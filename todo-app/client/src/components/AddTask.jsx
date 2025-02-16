@@ -24,6 +24,11 @@ function AddTask({ closeTaskModal }) {
                 title: task.title,
                 description: task.description,
                 deadline: task.dl
+            },{
+                headers: {
+                    "content-type": "application/json",
+                    "authorization": `Bearer ${localStorage.getItem("token")}`
+                }
             });
             console.log('Task adăugat:', response.data);
             // Reset settings

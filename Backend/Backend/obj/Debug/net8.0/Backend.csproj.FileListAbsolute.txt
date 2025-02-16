@@ -119,3 +119,7 @@ C:\Users\stoen\Desktop\todo-app\Backend\Backend\bin\Debug\net8.0\Microsoft.Ident
 C:\Users\stoen\Desktop\todo-app\Backend\Backend\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\stoen\Desktop\todo-app\Backend\Backend\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\stoen\Desktop\todo-app\Backend\Backend\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\stoen\Desktop\todo-app\Backend\Backend\bin\Debug\net8.0\Backend.staticwebassets.endpoints.json
+C:\Users\stoen\Desktop\todo-app\Backend\Backend\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\stoen\Desktop\todo-app\Backend\Backend\obj\Debug\net8.0\staticwebassets\msbuild.Backend.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\stoen\Desktop\todo-app\Backend\Backend\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

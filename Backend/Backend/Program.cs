@@ -12,9 +12,9 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AccountDbContext>(options =>
-    options.UseNpgsql("Host=localhost;Port=5432;Database=AccountDb; Username=postgres;Password=postgres"));
+    options.UseNpgsql("Host=localhost;Port=5432;Database=AccountDb; Username=postgres;Password=POSTGRES"));
 builder.Services.AddDbContext<TasksDbContext>(options =>
-    options.UseNpgsql("Host=localhost;Port=5432;Database=TasksDB; Username=postgres;Password=postgres"));
+    options.UseNpgsql("Host=localhost;Port=5432;Database=TasksDB; Username=postgres;Password=POSTGRES"));
 
 // Session
 builder.Services.AddSession(options =>
@@ -25,7 +25,7 @@ builder.Services.AddSession(options =>
 });
 
 //JWT
-var key = Encoding.ASCII.GetBytes("privatekey");
+var key = Encoding.ASCII.GetBytes("ewrewrewrewfsdvcsdferwewrewrewfsdfewrsrewrewsf3223423rgrsfdtferwrwerewsfdferwsrew423423wefew");
 
 //Cors
 builder.Services.AddCors(options =>

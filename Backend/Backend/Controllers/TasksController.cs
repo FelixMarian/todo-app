@@ -1,14 +1,23 @@
-﻿using Backend.Data;
+﻿using System.Security.Claims;
+using Backend.Data;
 using Backend.DTO;
 using Backend.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.IdentityModel.Tokens.Jwt;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Backend.Controllers
 {
+
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class TasksController : Controller
     {
+
+ 
+
         [HttpGet("index")]
         public IActionResult Index()
         {
@@ -18,7 +27,7 @@ namespace Backend.Controllers
         [HttpPost("add")]
         public async Task<IActionResult> addTask(TasksDbContext _db, TaskAddDTO taskAdd)
         {
-            var user_id = HttpContext.Session.GetString("guid");
+            var user_id = User.Claims.FirstOrDefault(c => c.Type == "guid")?.Value;
             _Task newTask = new _Task(user_id, taskAdd.title, taskAdd.description, taskAdd.Deadline);
             if(newTask != null)
             {
@@ -40,6 +49,7 @@ namespace Backend.Controllers
                 return StatusCode(500);
             else
                 return Ok(tasksList);
+
         }
     }
 }
