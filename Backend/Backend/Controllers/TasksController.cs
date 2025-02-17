@@ -44,7 +44,8 @@ namespace Backend.Controllers
         [HttpGet("get")]
         public async Task<IActionResult> getTasks(TasksDbContext _db)
         {
-            var tasksList = _db.Tasks.Where(task => task.user_id == HttpContext.Session.GetString("guid")).ToList() ;
+            var user_id = User.Claims.FirstOrDefault(c => c.Type == "guid")?.Value;
+            var tasksList = _db.Tasks.Where(task => task.user_id == user_id).ToList() ;
             if (tasksList is null)
                 return StatusCode(500);
             else

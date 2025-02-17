@@ -1,9 +1,34 @@
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import "../styles/MyProfile.css"
 import Button from "../components/Button.jsx"
+import axios from 'axios'
 
 function MyProfile() {
     const[data, setData] = useState("????");
+    const [mail, setMail] = useState("");
+    const [cDate, setCDate] = useState("");
+    const [username, setUsername] = useState("");
+
+    const getInfo = async () => {
+        try {
+            const response = await axios.get("https://localhost:7202/api/Account/users/me",
+                {
+                    headers: {
+                        "Authorization": `Bearer ${localStorage.getItem('token')}`,
+                        "Content-Type": "application/json"
+                    }
+                });
+            setMail(response.data.mail);
+            setCDate(response.data.createdAt);
+            setUsername(response.data.username);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    useEffect(() => {
+        getInfo();
+    }, []);
 
     return (
         <>
@@ -14,16 +39,13 @@ function MyProfile() {
                     </div>
                     <div className="Info">
                         <div className="Box">
-                            Username: {data}
+                            Username: {username}
                         </div>
                         <div className="Box">
-                            E-mail: {data}
+                            E-mail: {mail}
                         </div>
                         <div className="Box">
-                            Creation date: {data}
-                        </div>
-                        <div className="Box">
-                            Current tasks: {data}
+                            Creation date: {cDate}
                         </div>
                     </div>
                     <div className="Buttons">

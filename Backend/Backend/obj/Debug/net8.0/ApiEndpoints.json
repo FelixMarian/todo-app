@@ -42,6 +42,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Backend.Controllers.AccountController",
+    "Method": "getInfo",
+    "RelativePath": "api/Account/users/me",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Backend.Controllers.TasksController",
     "Method": "addTask",
     "RelativePath": "api/Tasks/add",

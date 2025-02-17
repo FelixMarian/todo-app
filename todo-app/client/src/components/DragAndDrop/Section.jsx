@@ -58,8 +58,6 @@ const Section = ({ section, index, moveSection  }) => {
                     <th>Description</th>
                     <th>Date created</th>
                     <th>Deadline</th>
-                    <th>Status</th>
-                    <th>Finished?</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -75,16 +73,8 @@ const Section = ({ section, index, moveSection  }) => {
                     >
                         {section.description}
                     </td>
-                    <td>{section.dateC}</td>
+                    <td>{section.created_At}</td>
                     <td>{section.deadline}</td>
-                    <td>{status}</td>
-                    <td>
-                        <Checkbox
-                            {...label}
-                            checked={isChecked}
-                            onChange={handleCheckboxChange}
-                        />
-                    </td>
                 </tr>
                 </tbody>
             </table>

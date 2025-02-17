@@ -9,19 +9,24 @@ import axios from "axios";
 function TodoList() {
     const [sections, setSections] = useState([]);
 
-
-
-
-
-    // Lista custom fallback
-    const fallbackSections = [
-        { id: 1, title: 'Default Section 1', description: "Description 1", dateC:"24.11.2024", deadline: "31.12.2024" },
-        { id: 2, title: 'Default Section 2', description: "Description 2", dateC:"03.12.2022", deadline: "13.11.2023"},
-    ];
-
+    const getTasks = async () => {
+        try{
+            const response = await axios.get("https://localhost:7202/api/Tasks/get",{
+                headers: {
+                    "Authorization": `Bearer ${localStorage.getItem('token')}`,
+                    "Content-Type": "application/json"
+                }
+            });
+            console.log(response.data);
+            setSections(response.data);
+        } catch (e) {
+            console.log(e);
+        }
+    }
 
     useEffect(() => {
-        setSections(fallbackSections);
+
+        getTasks();
     }, []);
 
     return (

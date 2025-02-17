@@ -27,7 +27,7 @@ const SectionList = ({ sections }) => {
         <div>
             {sectionList.map((section, index) => (
                 <Section
-                    key={section.id}
+                    key={section.guid}
                     index={index}
                     section={section}
                     moveSection={moveSection}

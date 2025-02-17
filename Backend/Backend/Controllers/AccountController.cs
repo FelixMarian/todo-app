@@ -57,7 +57,7 @@ namespace Backend.Controllers
                 {
                     Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim("guid", foundAcc.Result.guid)
+                    new Claim("guid", foundAcc.Result.guid),
                 }),
                     Expires = DateTime.UtcNow.AddHours(1),
                     SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
@@ -68,5 +68,19 @@ namespace Backend.Controllers
             else
                 return Unauthorized();
         }
+
+        [HttpGet("users/me")]
+        public async Task<IActionResult> getInfo (AccountDbContext _db)
+        {
+            var user_id = User.Claims.FirstOrDefault(c => c.Type == "guid")?.Value;
+            var _foundAcc = _db.accounts.FirstOrDefaultAsync(acc => acc.guid.Equals(user_id));
+            var _accInfo = new UserInfoDTO(_foundAcc.Result.email, _foundAcc.Result.createdAt, _foundAcc.Result.username);
+            if (user_id is not null)
+            {
+                return Ok(_accInfo);
+            }
+            else return Unauthorized();
+        }
+
     }
 }
