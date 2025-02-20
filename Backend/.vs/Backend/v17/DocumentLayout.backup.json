@@ -47,8 +47,7 @@
               "ViewState": "AgIAAEAAAAAAAAAAAAAowEoAAABSAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-03T11:33:56.718Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -58,7 +57,7 @@
               "RelativeDocumentMoniker": "Backend\\Controllers\\TasksController.cs",
               "ToolTip": "C:\\Users\\stoen\\Desktop\\todo-app\\Backend\\Backend\\Controllers\\TasksController.cs",
               "RelativeToolTip": "Backend\\Controllers\\TasksController.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAYwDUAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAqwF4AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-03T10:37:30.837Z",
               "IsPinned": true,
@@ -75,8 +74,7 @@
               "ViewState": "AgIAACoAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-03T10:50:50.534Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -88,8 +86,7 @@
               "RelativeToolTip": "Backend\\DTO\\TaskInfoDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-17T23:10:57.025Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-17T23:10:57.025Z"
             },
             {
               "$type": "Document",
@@ -101,8 +98,7 @@
               "RelativeToolTip": "Backend\\DTO\\TaskAddDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-17T22:56:48.596Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-17T22:56:48.596Z"
             },
             {
               "$type": "Document",
@@ -114,8 +110,7 @@
               "RelativeToolTip": "Backend\\DTO\\UserInfoDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-17T22:56:47.751Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-17T22:56:47.751Z"
             }
           ]
         }

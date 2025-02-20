@@ -11,7 +11,8 @@ import Register from './pages/Register.jsx';
 // @ts-ignore
 import MyAccount from './pages/MyAccount.jsx';
 import "./App.css";
-
+// @ts-ignore
+import ProtectedRoutes from "./utils/ProtectedRoutes.jsx";
 
 
 
@@ -20,11 +21,14 @@ function App(){
         <>
             <Router>
                 <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/list" element={<List />} />
                     <Route path="/Login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
+
+                    <Route element={<ProtectedRoutes/>}>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/list" element={<List />} />
                     <Route path="/account" element={<MyAccount/>} />
+                    </Route>
                 </Routes>
             </Router>
         </>

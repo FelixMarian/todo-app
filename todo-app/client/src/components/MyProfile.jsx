@@ -49,7 +49,6 @@ function MyProfile() {
                         </div>
                     </div>
                     <div className="Buttons">
-                    <Button title="Settings"></Button>
                     <Button title="Logout"></Button>
                     </div>
                 </div>

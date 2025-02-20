@@ -79,8 +79,38 @@
   },
   {
     "ContainingType": "Backend.Controllers.TasksController",
+    "Method": "getFiveDl",
+    "RelativePath": "api/Tasks/getFiveDl",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend.Controllers.TasksController",
     "Method": "Index",
     "RelativePath": "api/Tasks/index",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend.Controllers.TasksController",
+    "Method": "getNextDl",
+    "RelativePath": "api/Tasks/nextDl",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend.Controllers.TasksController",
+    "Method": "getOverdues",
+    "RelativePath": "api/Tasks/overdue",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

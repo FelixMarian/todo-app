@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Authorization;
+using System.Threading.Tasks;
 
 namespace Backend.Controllers
 {
@@ -51,6 +52,75 @@ namespace Backend.Controllers
             else
                 return Ok(tasksList);
 
+        }
+
+        [HttpGet("nextDl")]
+        public IActionResult getNextDl(TasksDbContext _db)
+        {
+            var user_id = User.Claims.FirstOrDefault(c => c.Type == "guid")?.Value;
+            var tasksList = _db.Tasks.Where(acc => acc.user_id == user_id).ToList();
+
+            if(tasksList is not null)
+            {
+                var sortedTasks = tasksList.OrderBy(t => t.Deadline).ToList();
+                DateTime today = DateTime.Now;
+                foreach(_Task t in sortedTasks)
+                {
+                    if (DateTime.Compare(t.Deadline, today)>0)
+                    {
+                        return Ok(t.title);
+                    }
+                }
+            }
+            return Unauthorized();
+        }
+
+        [HttpGet("getFiveDl")]
+        public IActionResult getFiveDl(TasksDbContext _db)
+        {
+            var user_id = User.Claims.FirstOrDefault(c => c.Type == "guid")?.Value;
+            var tasksList = _db.Tasks.Where(t => t.user_id == user_id).ToList();
+            string[] nextTasks = new string[5];
+            if(tasksList is not null)
+            {
+                var sortedList = tasksList.OrderBy(c => c.Deadline);
+                DateTime today = DateTime.Now;
+                int k = 0;
+                foreach(_Task t in sortedList)
+                {
+                    if (k <= 5 && DateTime.Compare(t.Deadline, today)>0)
+                    {
+                        nextTasks[k] = t.title;
+                        k++;
+                    }
+                }
+                return Ok(nextTasks);
+            }
+            return Unauthorized();
+        }
+
+        [HttpGet("overdue")]
+        public IActionResult getOverdues(TasksDbContext _db)
+        {
+            var user_id = User.Claims.FirstOrDefault(c => c.Type == "guid")?.Value;
+            var tasksList = _db.Tasks.Where(t => t.user_id == user_id).ToList();
+            string[] overdues = new string[tasksList.Count()];
+            int k = -1;
+            if(tasksList is not null)
+            {
+                DateTime today = DateTime.Now;
+                var sortedList = tasksList.OrderBy(c => c.Deadline);
+                foreach(_Task t in sortedList)
+                {
+                    if(DateTime.Compare(t.Deadline, today) < 0)
+                    {
+                        k++;
+                        overdues[k] = t.title;
+                    }
+                }
+                return Ok(overdues);
+            }
+            return Unauthorized();
         }
     }
 }
